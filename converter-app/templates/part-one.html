@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container" style="margin-top:20px">
+  <div class="row">
+    <div class="col-sm-4">
+      
+      <div class="card border-dark mb-3" style="max-width: 20rem;">
+        <div class="card-body">
+          <h4 class="card-title">About Me</h4>
+          <p class="card-text">I am your handy helper for all things related to InterGalactic Trading Conversions... given you provide me with some context clues first, please!!</p>
+
+          <h5> <p ></p>How to use me:</h5>
+          
+          <p> If you are new around here, please take a look at the guides listed for detailed information on how to get the most out of your experience here. </p>
+          
+          <p> Otherwise, go ahead and take a look at the Navigation bar and head on straight to the <a href="{{ url_for('secondPage') }}">CONVERSION TOOL!</a></p>
+        </div>
+      </div>
+
+
+      <hr class="d-sm-none">
+    </div>
+
+    <div class="col-sm-8">
+      <h2>Instructions</h2>
+
+      <h6>Check out my guides:</h6>
+    
+      <div class="card border-warning mb-3" style="max-width: 20rem;">
+        <div class="card-header">Guide: Transaction</div>
+        <div class="card-body">
+          <h4 class="card-title">Transaction Evaluation</h4>
+          <p class="card-text"></p>
+        </div>
+      </div>
+
+      <div class="card border-success mb-3" style="max-width: 80rem;">
+        <div class="card-header">Guide: Units</div>
+        <div class="card-body">
+          <h4 class="card-title">Unit Values</h4>
+          <p class="card-text">The numbers used for intergalactic transactions follows a similar convention to the roman numerals.</p>
+          <p>I have painstakingly collected the appropriate translation between roman numerals and arabic numerals to facilitate this process.</p>
+
+          <p>If you enter an invalid roman numeral, I will let you know!</p>
+          <p>If you don't provide me with enough context, I won't be able to fully evaluate your intergalactic transactions.</p>
+        </div>
+      </div>
+
+      
+
+      <div class="card border-light mb-3" style="max-width: 80rem;">
+        <div class="card-header">Guide: Credits</div>
+        <div class="card-body">
+          <h4 class="card-title">Metal & Dirt Values</h4>
+
+          <p class="card-text">To save you some time, I have pre-saved TWO options for validating your Metal inputs and of course, I made sure our valuable 'Dirt' is included! Remember, the shorter your list, the faster your computations will be. Thus, I have allowed a third option by which you can add your own list of metals (don't forget the Dirt if you need it!), and a fourth option where you leave it up to me to try and decipher your metal and dirt needs... I know you don't always have to time to verify your metals yourself.</p>
+          
+        <p>1.) (pre-saved) shortlist containing dirt and metals commonly used: Gold, Silver, Iron, Dirt. </p>
+        <p>2.) (pre-saved) complete list of metals found on Earth's Periodic Table of Elements, plus Dirt. <a class="nav-link active" href="https://sciencenotes.org/list-metals/">[source]</a> </p> 
+        <p>3.) (input required) upload a .txt file containing your own list of metals/dirt for validation. Make sure each is listed on a new line!</p>
+        <p>4.) I will try my best to guess and validate. </p>
+
+        <p>When using the tool, you will need to make a selection.</p>
+        </div>
+      </div>
+        
+ 
+      
+     
+
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>Footer</p>
+</div>
+
+{% endblock %}
