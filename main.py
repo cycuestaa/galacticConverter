@@ -1,48 +1,16 @@
 # new file
 
-
 from ntpath import join
 import os
 import sys
 import time
 import re
-import big_o
+
+from validate import Validator
+from convert import Converter
 
 
-def allowedMetals():
-    return ["Silver", "Gold", "Iron"]
-
-def isRoman(val):
-    #imax = 4 
-   # xmax = 4
-    #cmax = 4
-   # mmax = 4
-   # curr = ""
-   # tup = tuple(str(val).upper()) 
-
-    #for i in len(tup) :
-     #if tup[i] == "I" and imax > 0:
-
-    ## check if tuple.count vs str.count vs iterate str time complexity
-    ## check regex vs brute force pattern match
-    #return -1
-    
-    #thousand.. 'M{0,3}'
-    #hundred.. '(C[MD]|D?C{0,3})' = (CM|CD|D?C{0,3})
-    #ten.. '(X[CL]|L?X{0,3})' = (XC|XL|L?X{0,3})
-    #digit.. '(I[VX]|V?I{0,3})' = (IX|IV|V?I{0,3})
-    #print (bool(re.match(thousand + hundred+ten+digit +'$', input())))
-    regexR = r"M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$"
-    result = bool(re.match(regexR, val.upper()))
-
-    if result:
-        return True
-    else:
-        #sys.exit("Invalid roman numeral: " + str(val))  
-        return False
-
-
-def isMetalCred(cred, val, eq, unit):#value,unit,galactic_unit):
+def isMetalCred(cred, val, eq, unit):
     if (cred) == "credits" and str(val).isdigit() and eq == "is" :
         if (unit == "Silver" or unit == "Gold" or unit == "Iron" or unit == "Dirt"):
             return True
@@ -51,88 +19,23 @@ def isMetalCred(cred, val, eq, unit):#value,unit,galactic_unit):
         #TODO: build metal list
         return True
     return False
+               
 
-def arabicToRoman(x):
-    # chose to use ** nstead of math.pow() bc it is faster
-    # https://chrissardegna.com/blog/python-expontentiation-performance/
-    
-    #romanArabic = {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
-    arabicVals = (1000,900,500,400,100,90,50,40,10,9,5,4,1)
-    romanVals = ('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I')
-
-    val = x
-    rv = []
-    if str(val).isdigit():
-        for i in range(len(arabicVals)):
-            if arabicVals[i] > int(val):
-                continue  # Restart loop until input int <= key
-            rem = int(val) // arabicVals[i]  # use remainder
-            if not rem:
-                continue
-            rv.append(romanVals[i] * rem)
-            val = int(val) - (arabicVals[i] * rem)
-            if not val:
-                break
-
-        return ("".join(rv))
+def isEval(val):
+    if (len(val) == 3 and " ".join(val).lower() == "how much is") or (len(val) == 4 and " ".join(val).lower() == "how many credits is"):
+        return True
     else:
-        return "Invalid input"
+        ## iterate thru, check if all values are in galaxyRoman or metalConvert
 
-def calcRoman(s):
-    if isRoman(s):
-        romanArabic = {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
-        eval = tuple(s)
-        total = 0
-        i = 0
-        while i < (len(eval)):
-            curr = eval[i]
+        # else
+        return False
 
-            if i+1 == len(eval):
-                nxt = ''
-            else:
-                nxt = eval[i+1]
 
-            if curr == "I" :
-            # "I" can be subtracted from "V" and "X" only.
-                if nxt == "V" or nxt == "X":
-                    total += romanArabic[nxt] - romanArabic[curr] #(5-1) or (10-1)
-                    i += 2
-                else:
-                    total += romanArabic[curr]
-                    i += 1
-            elif curr == "X" :
-                # "X" can be subtracted from "L" and "C" only.
-                if nxt == "L" or nxt == "C":
-                    total += romanArabic[nxt] - romanArabic[curr] #(5-1) or (10-1)
-                    i += 2
-                else:
-                    total += romanArabic[curr]
-                    i += 1
-            elif curr == "C" :
-                # "C" can be subtracted from "D" and "M" only.
-                if nxt == "D" or nxt == "M":
-                    total += romanArabic[nxt] - romanArabic[curr] #(5-1) or (10-1)
-                    i += 2
-                else:
-                    total += romanArabic[curr]
-                    i += 1
-            else:
-                #"V", "L", and "D" can never be subtracted
-                total += romanArabic[curr]
-                i += 1
-        if total == 0:
-            return -1
-        
-        return total
-    else:
-        print("\t Value is not a valid Roman numeral")
-        return -1
-        # TODO : ask user if they would like to fix
-        
-            
-            
 
 def translateGalactic(rlines): #read lines from input file as tuple
+    calcRoman = Converter.calcRoman()
+    isRoman = Validator.isRoman()
+    
     galaxyRoman = {}
     metalConvert = {}
     originalVals = []
@@ -228,17 +131,6 @@ def translateGalactic(rlines): #read lines from input file as tuple
     print("convertedVals = " + str(convertedVals))
     
     return results
-
-
-def isEval(val):
-    if (len(val) == 3 and " ".join(val).lower() == "how much is") or (len(val) == 4 and " ".join(val).lower() == "how many credits is"):
-        return True
-    else:
-        ## iterate thru, check if all values are in galaxyRoman or metalConvert
-
-        # else
-        return False
-
 
 def main():
     print("---------------------------------------------\n")
