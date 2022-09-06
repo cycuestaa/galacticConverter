@@ -1,0 +1,4 @@
+Dirt
+Gold
+Silver
+Iron
