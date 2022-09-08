@@ -1,35 +1,71 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<script>
+  function selectFunc() {
+    alert("Some text is selected");
+  }
+  </script>
+
 <div class="container" style="margin-top:20px"> 
+
+  <h2> ======================== </h2>
+  <h4> Howdy Merchant!</h4>
+  <h2> ======================== </h2> 
+  <p>Hopefully, you read the guides and are by now familiar with how to use this tool. If not, fear not! Just go back to <a href="{{ url_for('firstPage') }}">INSTRUCTIONS</a> and come back when you are ready.</p>
+
+  <p>If you are here to check your roman numeral, you are in the wrong place. Go to <a href="{{ url_for('thirdPage') }}">CHECK ROMAN NUMERAL</a></p>
+
+  
+  
+
+   <!-- Form -->
+   <div class="container">
+    
+    
+
+    <form action="/calcManual" method="POST">
+        <div class="form-group">
+          <label for="exampleTextarea" class="form-label mt-4">Manual Input : </label>
+          <textarea class="form-control" name="text1" rows="15"></textarea>
+        </div>
+  
+  
+        <input type="submit" value="Calculate" id="man_button" class="btn" />
+        <br />
+        <div class="alert">
+          {{ result }}
+        </div>
+     </form>
+
+
   <form>
     <fieldset>
-      <legend>InterGalactic Conversions Tool</legend>
-      <div class="form-group">
-        <label for="exampleSelect1" class="form-label mt-4">Select</label>
-        <select class="form-select" id="exampleSelect1">
-          <option>Input new transactions </option>
-          <option>Upload transactions file</option>
-          <option>Test transactions pass</option>
-          <option>Test transactions fail</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleTextarea" class="form-label mt-4">Input New Transactions</label>
-        <p>Remember, each entry must be on a new line.</p>
-        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="formFile" class="form-label mt-4">Input file containing intergalactic transactions</label>
-        <input class="form-control" type="file" id="formFile">
-      </div>
-     
+      <legend> == InterGalactic Conversions Tool == </legend>
       <fieldset class="form-group">
-        <legend class="mt-4">Dirt & Metals</legend>
+        <div class="form-group">
+          <label for="exampleSelect1" class="form-label mt-4">Select Transaction Type</label>
+          <select class="form-select" id="exampleSelect1">
+            <option>Input new transactions manually</option>
+            <option>Upload new transactions file</option>
+            <option>Test transactions pass</option>
+            <option>Test transactions fail</option>
+          </select>
+        </div>
+
+    
+        <div class="form-group">
+          <label for="formFile" class="form-label mt-4">Upload transactions file</label>
+          <p>Remember, file containing intergalactic transactions should list each entry on a new line.</p>
+          <input class="form-control" type="file" id="formFile">
+        </div>
+
+        <legend class="mt-4">Dirt & Metals Validation</legend>
         <div class="form-check">
           <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
           <label class="form-check-label" for="optionsRadios1">
-            Option one is this and that—be sure to include why it's great
+            Quick: 
           </label>
         </div>
         <div class="form-check">
@@ -45,44 +81,11 @@
           </label>
         </div>
       </fieldset>
-
-      <fieldset class="form-group">
-        <legend class="mt-4">Checkboxes</legend>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault">
-            Default checkbox
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
-          <label class="form-check-label" for="flexCheckChecked">
-            Checked checkbox
-          </label>
-        </div>
-      </fieldset>
-      <fieldset class="form-group">
-        <legend class="mt-4">Switches</legend>
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-          <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
-        </div>
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked="">
-          <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
-        </div>
-      </fieldset>
-      <fieldset class="form-group">
-        <legend class="mt-4">Ranges</legend>
-          <label for="customRange1" class="form-label">Example range</label>
-          <input type="range" class="form-range" id="customRange1">
-          <label for="disabledRange" class="form-label">Disabled range</label>
-          <input type="range" class="form-range" id="disabledRange" disabled="">
-          <label for="customRange3" class="form-label">Example range</label>
-          <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
-      </fieldset>
+      
       <button type="submit" class="btn btn-primary">Submit</button>
     </fieldset>
   </form>
 </div>
+
+
 {% endblock %}

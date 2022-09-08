@@ -1,9 +1,9 @@
-from flask import render_template
+from flask import render_template, request
 from main import app
 
 
 @app.route('/basic-template')
-def basicTemplate():
+def main():
     return render_template('basic-template.html')
 
 @app.route('/')
@@ -14,5 +14,4 @@ def firstPage():
 @app.route('/tool')
 def secondPage():
     return render_template('part-two.html')
-
 
