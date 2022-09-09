@@ -101,17 +101,57 @@ appropriately.
 #### main.py
 This file contains the bulk of the code
 
-#### buildMetals.py
-This file can be used to create/populate txt file containing list of dirt and allowed metals.
-Outputs testMetals.txt
-
-#### config.py
-This file contains all required paths and file names for quick and easy loading.
-
 
 
 <a name="buildman"></a>
 ## Build Manual
 
 - Download the code from github.
+
+Then...
+
+To set up environment for project:
+- python3 -m venv .venv
+- source .venv/bin/activate (to activate environment after set-up) 
+- python3 -m pip install flask
+- python3 -m pip install Flask-WTF
+
+
+
+## Final Notes:
+- gcloud was a complex deployment beyond this scope.
+
+- sources cited...
+
+review complexity of the project :
+https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/
+
+
+python complexity:
+https://towardsdatascience.com/timing-the-performance-to-choose-the-right-python-object-for-your-data-science-project-670db6f11b8e
+https://python.plainenglish.io/how-to-write-efficient-python-code-c6f3112de5ac
+https://www.geeksforgeeks.org/complexity-cheat-sheet-for-python-operations/
+https://wiki.python.org/moin/TimeComplexity
+https://blog.garybricks.com/efficiency-and-big-o-notation-overview-with-python-examples
+https://adamgold.github.io/posts/python-hash-tables-under-the-hood/#how-to-handle-collisions
+https://tommyseattle.com/tech/python-class-dict-named-tuple-memory-and-perf.html
+https://python.plainenglish.io/optimised-python-data-structures-74c22a140cff
+
+analysis tools:
+https://towardsdatascience.com/simplify-your-python-code-automating-code-complexity-analysis-with-wily-5c1e90c9a485
+mypy
+
+
+when to use data structs..
+https://medium.com/learn-python-programming/list-tuple-set-and-dictionary-data-type-and-use-cases-b6d02e1c7bbb
+
+tuples vs dicts:
+https://medium.com/code2pro/python-tuple-vs-named-tuple-vs-dictionary-e5541aa07dbb
+
+tuples vs lists
+https://python.plainenglish.io/python-lists-and-tuples-760d45ebeaa8
+
+https://tommyseattle.com/tech/python-class-dict-named-tuple-memory-and-perf.html
+
+
 
