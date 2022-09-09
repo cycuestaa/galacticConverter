@@ -1,0 +1,43 @@
+New to virtual studio code? Check out this tutorial on how to get started with VS Code.
+Useful resources :
+# https://code.visualstudio.com/docs/python/python-tutorial
+# https://code.visualstudio.com/docs/python/tutorial-django
+considered using django but database seemed unnecessary. 
+# https://code.visualstudio.com/docs/python/tutorial-flask
+# https://realpython.com/python-web-applications/#choose-a-hosting-provider-google-app-engine
+#https://cloud.google.com/code/docs/vscode/install
+To Run the project :
+$ python3 -m venv .venv
+$ source .venv/bin/activate  # run to activate the environment 
+
+# when (.venv) shows at the start of the terminal, environment is active
+
+$ python3 -m pip install --upgrade pip 
+$ python3 -m pip install Django  
+or $ python -m pip install flask
+
+
+$ django-admin startproject web_project .
+
+$ cd django_project_folder
+$ python manage.py runserver
+
+open browser by Cmd+click url in terminal output window 
+-> (http://127.0.0.1:8000/)
+
+
+
+manage.py: The Django command-line administrative utility for the project. You run administrative commands for the project using python manage.py <command> [options]
+
+- django_galactic_converter (subfolder) :
+-- __init__.py: an empty file that tells Python that this folder is a Python package.
+-- asgi.py: an entry point for ASGI-compatible web servers to serve your project. You typically leave this file as-is as it provides the hooks for production web servers.
+-- settings.py: contains settings for Django project, which you modify in the course of developing a web app.
+-- urls.py: contains a table of contents for the Django project, which you also modify in the course of development.
+-- wsgi.py: an entry point for WSGI-compatible web servers to serve your project. You typically leave this file as-is as it provides the hooks for production web servers.
+
+
+
+
+  "access_key": "GOOG1EVKT4AF4LZJ4ZDPVHCX5P25A7XNMABPF2QCEU57YZ2WTR7SOJRRSFFZI",
+  "secret_key": "jJN/lESwPgZLyqyPOk4oJ29lYa3j2GHjFtP0fVbC",

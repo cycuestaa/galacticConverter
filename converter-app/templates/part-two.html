@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<script>
+  function selectFunc() {
+    alert("Some text is selected");
+  }
+  </script>
+
+<script>
+  function showManualInput() {
+    var x = document.getElementById("DIV");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+  </script>
+
+<div class="container" style="margin-top:20px"> 
+  <br />
+  <p class="text-muted">Hopefully, you read the transaction guides and are by now familiar with how to use this tool. If not, fear not! Just go back to <a href="{{ url_for('firstPage') }}">INSTRUCTIONS</a> and come back when you are ready.</p>
+  <br />
+
+    <h3> ========================== </h3>
+    <h2> Intergalactic Transactions</h2>
+    <h3> ========================= </h3> 
+
+   <!-- Form -->
+   <p class="text-warning"> Want to run a test to try it out first? Go ahead and use one of our pre-saved inputs: Click a button! </p>
+   <div class="container">
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <form action="/runGoodTest" method="POST">
+              <input type="submit" value="Clean-Inputs.txt" id="good_test_btn" class="btn btn-outline-secondary" name="good_btn"/>
+            </form>
+          </div>
+          <div class="col">
+            <form action="/runMessyTest" method="POST">
+              <input type="submit" value="Messy-Inputs.txt" id="bad_test_btn"  class="btn btn-outline-secondary" name="bad_btn"/>
+            </form>
+  
+          </div>
+        </div>
+        <br />
+        <br />
+  
+
+        <!-- Manual Selection Form -->
+    <form action="/customInput" method="POST">
+      <div class="form-group">
+        <label for="exampleTextarea" class="form-label mt-4"> Please choose your input method : </label>
+        <div class="input-group">
+              <select name="input_select" class="selectpicker form-control">
+                  <option name="opt1"> Type input transactions manually</option>
+                  <option name="opt2"> Upload input transactions file</option>
+              </select>
+              <br />
+              <input type="submit" value=" Select " id="select_btn" class="btn btn-primary"/>
+      </div>
+      <br />
+   </form>
+
+    {% if opt1 %}
+    <form action="/textAreaInput" method="POST">
+      <div class="form-group">
+        <label for="exampleTextarea" class="form-label mt-4">
+          <h4>Custom input :</h4></label>
+        <p>Make sure you write out your full intergalactic transactions input before submitting or you might have to start over! Remember, every intergalactic transaction entry should have its own new line. </p>
+      <textarea class="form-control" id="exampleTextarea" rows="7" name="textInput" placeholder="Type your inputs here."></textarea>
+      </div>
+      <br />
+      <input type="submit" value=" Convert text inputs! " id="check_btn" class="btn btn-primary"/>
+    </form>
+    {% endif %}
+  
+    {% if opt2 %}
+        <div class="form-group">
+          <label for="formFile" class="form-label mt-4">
+            <h3>Upload transactions file</h3></label>
+          <p>Remember, your input file containing intergalactic transactions should list each entry on a new line.</p>
+          <input class="form-control" type="file" id="formFile">
+        </div>
+    {% endif %}
+
+     
+  <form>
+    <fieldset>
+      <fieldset class="form-group">
+        
+        <legend class="mt-4">Dirt & Metals Validation</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+          <label class="form-check-label" for="optionsRadios1">
+            Quick: 
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+          <label class="form-check-label" for="optionsRadios2">
+            Option two can be something else and selecting it will deselect option one
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
+          <label class="form-check-label" for="optionsRadios3">
+            Option three is disabled
+          </label>
+        </div>
+      </fieldset>
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+  </form>
+</div>
+
+{% endblock %}

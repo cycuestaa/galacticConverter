@@ -1,0 +1,14 @@
+{
+  "type": "service_account",
+  "project_id": "automatic-gamma-361715",
+    "access_key": "GOOG1EVKT4AF4LZJ4ZDPVHCX5P25A7XNMABPF2QCEU57YZ2WTR7SOJRRSFFZI",
+  "secret_key": "jJN/lESwPgZLyqyPOk4oJ29lYa3j2GHjFtP0fVbC",
+  "private_key_id": "1c476cb5d31a5b25b2100c8a4e12f901b712036d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDO2fKHAxglH+jT\nUrCIAn/upfLe81L8wFU4Wx+RqXTl0GpCryr8o8z4Tex6NWKx5SlYh4CN//SwcSqt\n3GYu5BX+BrpxHdMJhoPjI/AvhgKpZxLr2KPI+ZMCesnzV16RyVKlHoP/KvMeNtFu\nTT+MFulL9J0Gs3mTFF8X6HiNJXgRlFvpXRbF61kvb3sk7GKH47mHqGT93uMG4Zr/\n+nZXfzvyKHFWdwKqRgxV4VaGvykAS8h9xauUwdLEDmLjqyciPrxarwbr159yz7sd\nzrTbVhbC/oOe+ZkFYIDNlybQt9+NMjqZ9LfclnM++RRXJpbnI3jDiugmKiKa85ET\nnGh1EiSzAgMBAAECggEAP0rW99LNj4Z9AjRaCbPiG06xyuBfMzFSoiTXuwVD3JHy\nAaeBmr4wGIYXZqlxIofBJ/KGNmzsHRTzfzFiHtTxmcHLSJNcoJyFPHohoxj5NYZx\ndrLaIsOi5O5XXtsL98XHQPjeYLRuoX8ahAqk+COGjRQy+/rsp0Fje3hJcr7VR2M2\nBLUrMPlT4o5dYh342BOq44MiD9VGo+5A6yCavb9Ps3Vex5lbn8SFgXYr2AukkBK0\nn9fBDMj0IJyaLmlfSVkD8l+wdAG5EBHWdiuXGMK+1eWkiFt5W7TQREOWE3BpQ69d\na9CNnE2pIyamXJPFO7+RO+dfTQJ1v0PnAMdzjT/wGQKBgQDrMtIFrcSyRP6jpxzZ\nA8zPtLwScDbTMN+j538YhmmGUtFWj8HbUTiJlD/N8oVsVih/K/s7MvEtpZxKPvIb\nfdC8ywjSSN/z3AGDi9Lf9BmU10uGZkGK2633/gy5mrVMojIToqFHNEkLu18LTrB9\n17r6NhIhUvt193URvbc+g+KDBwKBgQDhJVAZ427O5qIetS+QlnqhX6TzxxmV2kKa\nLbfXbDs8fLeteP+KESokTLj34mzEsrneA0lppb5nO+0dHIa5n4yVD47iT7rTaM9v\nk0kDM6GR1PgjVB117IuVzkDTRrO1UlJqgnb5xJa2/6c94dECGZke9Bqi5WPSsrdD\n3/FWqnSJ9QKBgQDEUGD5GHerjOc2VhBAG2ninKq2gS9hy9N/jYSKRfbihVHx/IAE\nvaCBRVqUXi97o9adf2ptmTGxth/j4PJYfAW074tnaihz9VjWIelbwPVxRNrnTYa7\njm2BJ24bpcRaOK+vr/kJ49xsjHLij0XFZEHPAz7Szd7SMkBnFIFVDuQMFQKBgQCA\nPJBzLmde0V5lvy1oXU1bvO5nK3AXOknVJ1UfDjZvLVoxJEnoif5GzqxMBFuPbX0Q\nRy75Tb41bpyPiD/0WjvoawQnQuJWp8v+8RUVDcNpHLR46uAc2q5mlSO3Mv4IuOrY\nX5cEjESL1vGa/ZPeblYYm1DQl3dT+xcHQfZkNpJKQQKBgAviaZdNdo9tG2Qp2DmA\nFrUWa3ID15NCpRogPoOTkcbMUsNukgBXArJakOusluifDjSkFGV1JK+aS290tMa/\n3KKP8ympX+WkRTdIiqyp7E6kZadvtaQPLV4YU9o6ur5GKipipwr3qKTfbHpAHlw8\nep19DmO5BVDkVQ0qcXtlkNax\n-----END PRIVATE KEY-----\n",
+  "client_email": "galaxy-merch-922@automatic-gamma-361715.iam.gserviceaccount.com",
+  "client_id": "113736905845686454921",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/galaxy-merch-922%40automatic-gamma-361715.iam.gserviceaccount.com"
+}

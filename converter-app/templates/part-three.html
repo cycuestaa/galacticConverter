@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container" style="margin-top:20px"> 
+  <br />
+  <p class="text-muted">Hopefully, you read the guides and are by now familiar with how to use these three tools. If not, fear not! Just go back to <a href="{{ url_for('firstPage') }}">INSTRUCTIONS</a> and come back when you are ready.</p>
+  <br />
+  {% if result or result2 or result3 %}
+  <p class="text-secondary"> Don't see your result? Make sure you scroll... I know I put it somewhere ;) </p>
+  {% endif%}
+
+  <div class="jumbotron text-center" style="margin-bottom:10" >
+    <h2> ======================== </h2>
+    <h3> Verify Roman Numeral</h3>
+    <h2> ======================== </h2> 
+  </div>
+
+  <div class="card border-light mb-3" style="max-width: 80rem;">
+    <div class="card-header"> 
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">PURPOSE : </h5>
+      <p class="card-text"> To check if you have entered a properly formatted roman numeral.</p>
+    
+      <div>
+        <form action="/isRoman" method="POST">
+          <div class="form-group">
+            <label for="Entry">Input value : </label>
+            <input type="text" placeholder="roman numeral" name="num1" />
+          </div>
+          <br />
+          <input type="submit" value=" Check " id="check_btn" class="btn btn-primary"/>
+
+          {% if result %}
+            <br />
+            <br />
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+              <div class="card-header">Result:</div>
+              <div class="card-body">
+                <div class="alert">
+                  {{ result }}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </form>
+      </div>
+    </div>
+  </div>
+    
+  <br />
+  <br />
+  <div class="jumbotron text-center" style="margin-bottom:10">
+    <h2> ======================== </h2>
+    <h3> Roman To Arabic Numeral</h3>
+    <h2> ======================== </h2> 
+  </div>
+    
+  <div class="card border-light mb-3" style="max-width: 80rem;">
+    <div class="card-header"> 
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">PURPOSE : </h5>
+      <p class="card-text">
+    <p>Enter roman numeral, return conversion as arabic numeral.</p>
+    
+    <div>
+      <form action="/romanToArabic" method="POST">
+        <div class="form-group">
+          <label for="Entry">Input value : </label>
+          <input type="text" placeholder="roman numeral" name="num2" />
+        </div>
+        <br />
+        <input type="submit" value=" Convert " id="conv_btn" class="btn btn-primary"/>
+
+        {% if result2 %}
+          <br />
+          <br />
+          <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Result:</div>
+            <div class="card-body">
+              <div class="alert">
+                {{ result2 }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        <br />
+        <br />
+      </form>
+    </div>
+
+    </div>
+  </div>
+
+  <br />
+  <br />
+  <div class="jumbotron text-center" style="margin-bottom:10">
+    <h2> ======================== </h2>
+    <h3> Arabic To Roman Numeral</h3>
+    <h2> ======================== </h2> 
+  </div>
+  
+  <div class="card border-light mb-3" style="max-width: 80rem;">
+    <div class="card-header"> 
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">PURPOSE : </h5>
+      <p class="card-text">
+    <p>Enter arabic numeral, return conversion as roman numeral.</p>
+    
+    <div>
+      <form action="/arabicToRoman" method="POST">
+        <div class="form-group">
+          <label for="Entry">Input value : </label>
+          <input type="text" placeholder="arabic numeral" name="num3" />
+        </div>
+        <br />
+        <input type="submit" value=" Convert " id="conv_btn" class="btn btn-primary"/>
+
+        {% if result3 %}
+          <br />
+          <br />
+          <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Result:</div>
+            <div class="card-body">
+              <div class="alert">
+                {{ result3 }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+      </form>
+    </div>
+
+    </div>
+  </div>
+
+  {% endblock %}
