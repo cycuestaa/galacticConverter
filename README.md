@@ -116,10 +116,14 @@ To set up environment for project:
 - python3 -m pip install flask
 - python3 -m pip install Flask-WTF
 
+### To Run:
+- python3 main.py
 
+## View live demo:
+https://automatic-gamma-361715.uc.r.appspot.com/
 
 ## Final Notes:
-- gcloud was a complex deployment beyond this scope.
+- gcloud was a complex deployment beyond this scope. Other branches were not used in the final product.
 
 - sources cited...
 
